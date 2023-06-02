@@ -1,7 +1,7 @@
 "use client";
 import ReactQuery from "@/providers/reactQuery";
+import ThemeComponent from "@/themes/ThemeComponent";
 import React from "react";
-import ThemeComponent from "@/themes/themeComponent";
 
 const RootProvider = ({ children }: { children: React.ReactNode }) => {
   return (
