@@ -9,6 +9,7 @@ export default function Home() {
         <BarChart />
         <AreaChart />
         <MyChartComponent />
+        <div>EIEI</div>
       </div>
     </main>
   );
