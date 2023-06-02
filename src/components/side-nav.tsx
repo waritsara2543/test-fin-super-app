@@ -7,11 +7,15 @@ import { SideNavItem } from "./side-nav-item";
 import { usePathname } from "next/navigation";
 import { items } from "../constants/navItems";
 import Image from "next/image";
+import { Typography } from "@mui/material";
+import { useTheme } from "@mui/material/styles";
 
 type Anchor = "top" | "left" | "bottom" | "right";
 const SideNav = () => {
   const [open, setOpen] = React.useState(true);
   const pathname = usePathname();
+  const theme = useTheme();
+
   return (
     <div>
       <Drawer
@@ -24,18 +28,20 @@ const SideNav = () => {
             width: 280,
           },
         }}
-        variant="permanent"
-      >
+        variant="permanent">
         <Box
           sx={{
             alignItems: "center",
             display: "flex",
             flexDirection: "column",
             p: 2,
-          }}
-        >
+          }}>
           <Image src="/assets/logo.png" alt="logo" width={100} height={100} />
           <h1 className="text-3xl font-bold"> Fin Super App</h1>
+          <Typography variant="h6" color={theme.palette.primary.main}>
+            {" "}
+            ยินดีต้อนรับ{" "}
+          </Typography>
         </Box>
         <Divider sx={{ borderColor: "#2F3746" }} />
         {items.map((item) => {
